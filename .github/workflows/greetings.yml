@@ -1,0 +1,16 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: 'ALREADY? anyways...'
+        pr-message: 'Hello! just so you know, I will NOT listen to pull requests that involve adding "op hacks", because they should me MINE to enjoy. jk I will listen but make it work'
